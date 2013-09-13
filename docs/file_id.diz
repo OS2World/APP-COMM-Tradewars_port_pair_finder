@@ -1,0 +1,6 @@
+Port pair locator for Tradewars 2002 BBS door game.  
+Will locate adjacent port pairs, for trading, 
+stealing/selling, robbing, etc., based on CIM data.
+Supports 65535 sectors, and simultaneous multiple
+type searches. DOS, DPMI, and OS/2 executables plus
+source included.  Version 0.07

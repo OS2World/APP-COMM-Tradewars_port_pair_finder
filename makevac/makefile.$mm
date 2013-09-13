@@ -1,0 +1,99 @@
+:TARGET.SUFFIXES
+:TARGET.SUFFIXES
+:DEPENDENCY..cpp .obj 
+:TARGET.all
+:DEPENDENCY.
+.\twppos2.exe
+:RULE..cpp.obj
+:ACTION.Compile::C++ Compiler
+:COMMAND.
+icc.exe /Tl10 /Su4 /Sp1 /Ss /Q /Fi /Si /O /G5 /Gf /Gi /Gx /Ft- /Gu /C %s
+:RULE.{h:\twports}.cpp.obj
+:ACTION.Compile::C++ Compiler
+:COMMAND.
+icc.exe /Tl10 /Su4 /Sp1 /Ss /Q /Fi /Si /O /G5 /Gf /Gi /Gx /Ft- /Gu /C %s
+:TARGET..\twppos2.exe
+:DEPENDENCY.
+.\TWSector.obj
+.\TWWarp.obj
+.\AbEnds.obj
+.\Globals.obj
+.\TWPair.obj
+.\TWPort.obj
+.\TWPPFind.obj
+.\TWRemaps.obj
+:ACTION.Link::Linker
+:COMMAND.
+icc.exe @<<
+ /Q /B" /exepack:1 /packd /optfunc      /noe"
+ /Fetwppos2.exe 
+ .\TWSector.obj
+ .\TWWarp.obj
+ .\AbEnds.obj
+ .\Globals.obj
+ .\TWPair.obj
+ .\TWPort.obj
+ .\TWPPFind.obj
+ .\TWRemaps.obj
+<<
+:TARGET..\TWSector.obj
+:DEPENDENCY.
+h:\twports\TWSector.cpp
+{h:\twports;$(INCLUDE);}TWWarp.hpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}Globals.hpp
+{h:\twports;$(INCLUDE);}AbEnds.hpp
+{h:\twports;$(INCLUDE);}TWPPFind.h
+{h:\twports;$(INCLUDE);}TWSector.hpp
+{h:\twports;$(INCLUDE);}TWPort.hpp
+{h:\twports;$(INCLUDE);}TWPair.hpp
+{h:\twports;$(INCLUDE);}TWRemaps.hpp
+:TARGET..\TWRemaps.obj
+:DEPENDENCY.
+h:\twports\TWRemaps.cpp
+:TARGET..\TWPPFind.obj
+:DEPENDENCY.
+h:\twports\TWPPFind.cpp
+{h:\twports;$(INCLUDE);}TWWarp.hpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}Globals.hpp
+{h:\twports;$(INCLUDE);}AbEnds.hpp
+{h:\twports;$(INCLUDE);}TWPPFind.h
+{h:\twports;$(INCLUDE);}TWSector.hpp
+{h:\twports;$(INCLUDE);}TWPort.hpp
+{h:\twports;$(INCLUDE);}TWPair.hpp
+{h:\twports;$(INCLUDE);}TWRemaps.hpp
+:TARGET..\TWPort.obj
+:DEPENDENCY.
+h:\twports\TWPort.cpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}TWPort.hpp
+:TARGET..\TWPair.obj
+:DEPENDENCY.
+h:\twports\TWPair.cpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}Globals.hpp
+{h:\twports;$(INCLUDE);}AbEnds.hpp
+{h:\twports;$(INCLUDE);}TWSector.hpp
+{h:\twports;$(INCLUDE);}TWPort.hpp
+{h:\twports;$(INCLUDE);}TWPair.hpp
+:TARGET..\Globals.obj
+:DEPENDENCY.
+h:\twports\Globals.cpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}Globals.hpp
+{h:\twports;$(INCLUDE);}TWSector.hpp
+{h:\twports;$(INCLUDE);}TWPort.hpp
+{h:\twports;$(INCLUDE);}TWPair.hpp
+:TARGET..\AbEnds.obj
+:DEPENDENCY.
+h:\twports\AbEnds.cpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
+{h:\twports;$(INCLUDE);}Globals.hpp
+{h:\twports;$(INCLUDE);}AbEnds.hpp
+{h:\twports;$(INCLUDE);}TWPPFind.h
+:TARGET..\TWWarp.obj
+:DEPENDENCY.
+h:\twports\TWWarp.cpp
+{h:\twports;$(INCLUDE);}TWWarp.hpp
+{h:\twports;$(INCLUDE);}TWTypes.hpp
